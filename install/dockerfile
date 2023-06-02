@@ -1,0 +1,15 @@
+from firedrakeproject/firedrake
+
+USER root
+
+ADD FInAT /home/firedrake/firedrake/src/FInAT
+ADD ufl /home/firedrake/firedrake/src/ufl
+ADD tsfc /home/firedrake/firedrake/src/tsfc
+
+RUN bash -c ". /home/firedrake/firedrake/bin/activate && pip install notebook"
+
+ENV PATH="/home/firedrake/firedrake/bin/:$PATH"
+
+RUN mkdir notebooks
+
+ENV JUPYTER_CONFIG_DIR="/home/firedrake/notebooks/.jupyter"
