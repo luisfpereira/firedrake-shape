@@ -4,9 +4,9 @@
 cd install
 
 # bring dependencies in
-git clone https://github.com/luisfpereira/FInAT/tree/gstats
-git clone https://github.com/luisfpereira/ufl/tree/gstats
-git clone https://github.com/luisfpereira/tsfc/tree/gstats
+git clone https://github.com/luisfpereira/FInAT/
+git clone https://github.com/luisfpereira/ufl/
+git clone https://github.com/luisfpereira/tsfc/
 
 # create docker image
 docker build -t <tag-name> .
