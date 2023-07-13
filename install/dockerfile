@@ -3,13 +3,16 @@ from firedrakeproject/firedrake
 
 USER root
 
-# https://github.com/luisfpereira/FInAT/tree/gstats
+# https://github.com/luisfpereira/FInAT
+ADD firedrake /home/firedrake/firedrake/src/firedrake
+
+# https://github.com/luisfpereira/FInAT
 ADD FInAT /home/firedrake/firedrake/src/FInAT
 
-# https://github.com/luisfpereira/ufl/tree/gstats
+# https://github.com/luisfpereira/ufl
 ADD ufl /home/firedrake/firedrake/src/ufl
 
-# https://github.com/luisfpereira/tsfc/tree/gstats
+# https://github.com/luisfpereira/tsfc
 ADD tsfc /home/firedrake/firedrake/src/tsfc
 
 RUN bash -c ". /home/firedrake/firedrake/bin/activate && pip install notebook"

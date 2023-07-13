@@ -4,6 +4,7 @@
 cd install
 
 # bring dependencies in
+git clone https://github.com/luisfpereira/firedrake/
 git clone https://github.com/luisfpereira/FInAT/
 git clone https://github.com/luisfpereira/ufl/
 git clone https://github.com/luisfpereira/tsfc/
@@ -12,25 +13,33 @@ git clone https://github.com/luisfpereira/tsfc/
 docker build -t firedrake-shape .
 ```
 
+Note: the repos hosted under `luisfpereira` are frozen versions of `firedrake` and its ecosystem.
+
+
 One of the docker images has a jupyter notebook entry point. To install it:
 
 ```bash
-docker build -t shape-notebook dockerfile.jupyter
+docker build -t shape-notebook - < dockerfile.jupyter
 ```
 
 # Usage
 
 To launch docker and work with jupyter notebooks:
 
-```bash
 
-mkdir notebooks
-cd notebooks
-
+```
 docker run --rm -i -t -p 8888:8888 --mount src="$(pwd)",target=/home/firedrake/notebooks,type=bind shape-notebook
 ```
 
+
 This binds host notebook folder with docker's notebook folder so that we can persist notebooks across sessions.
+
+
+You can launch it from any folder. If you want to have access to the notebooks already created, just change directory to `notebooks` before running the code above. 
+
+```bash
+cd ../notebooks
+```
 
 
 

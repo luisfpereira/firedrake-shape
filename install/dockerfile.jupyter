@@ -1,4 +1,4 @@
-from firedrake:bock
+from firedrake-shape
 
 WORKDIR /home/firedrake/notebooks
 
