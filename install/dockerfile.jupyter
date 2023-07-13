@@ -1,5 +1,14 @@
 from firedrake-shape
 
+RUN bash -c ". /home/firedrake/firedrake/bin/activate && pip install notebook"
+
+ENV PATH="/home/firedrake/firedrake/bin/:$PATH"
+
+RUN mkdir notebooks
+
+ENV JUPYTER_CONFIG_DIR="/home/firedrake/notebooks/.jupyter"
+
+
 WORKDIR /home/firedrake/notebooks
 
 #EXPOSE 8888/tc

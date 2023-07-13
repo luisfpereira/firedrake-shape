@@ -4,9 +4,6 @@ from firedrakeproject/firedrake
 USER root
 
 # https://github.com/luisfpereira/FInAT
-ADD firedrake /home/firedrake/firedrake/src/firedrake
-
-# https://github.com/luisfpereira/FInAT
 ADD FInAT /home/firedrake/firedrake/src/FInAT
 
 # https://github.com/luisfpereira/ufl
@@ -15,10 +12,7 @@ ADD ufl /home/firedrake/firedrake/src/ufl
 # https://github.com/luisfpereira/tsfc
 ADD tsfc /home/firedrake/firedrake/src/tsfc
 
-RUN bash -c ". /home/firedrake/firedrake/bin/activate && pip install notebook"
-
-ENV PATH="/home/firedrake/firedrake/bin/:$PATH"
-
-RUN mkdir notebooks
-
-ENV JUPYTER_CONFIG_DIR="/home/firedrake/notebooks/.jupyter"
+WORKDIR /home/firedrake/firedrake/src/firedrake
+RUN git config --global --add safe.directory /home/firedrake/firedrake/src/firedrake
+RUN git checkout a015738dcbad8f1555b15623fe17875ae665e884
+RUN git switch -c gstats

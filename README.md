@@ -4,7 +4,6 @@
 cd install
 
 # bring dependencies in
-git clone https://github.com/luisfpereira/firedrake/
 git clone https://github.com/luisfpereira/FInAT/
 git clone https://github.com/luisfpereira/ufl/
 git clone https://github.com/luisfpereira/tsfc/
@@ -13,7 +12,7 @@ git clone https://github.com/luisfpereira/tsfc/
 docker build -t firedrake-shape .
 ```
 
-Note: the repos hosted under `luisfpereira` are frozen versions of `firedrake` and its ecosystem.
+Note: the repos hosted under `luisfpereira` are frozen versions of `firedrake` ecosystem.
 
 
 One of the docker images has a jupyter notebook entry point. To install it:
@@ -42,5 +41,4 @@ cd ../notebooks
 ```
 
 
-
-P.S. the only predictable issues related with installation lie on the image of firedrake used as base image. There's no obvious workaround, as they only keep the latest version available in docker. If you are having troubles installing or running the code, then use firedrake's recipe to create their docker image in a commit around 02/06/2023.
+P.S. the only predictable issues related with installation lie on the image of firedrake used as base image. There's no obvious workaround, as they only keep the latest version available in docker. If you are having troubles installing or running the code, first try to checkout all their dependencies to commits done around 02/06/2023 (as it is currently done with `firedrake`). As last resource, use firedrake's recipe to create their docker image in a commit around that time.
